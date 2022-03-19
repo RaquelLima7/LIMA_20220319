@@ -4,10 +4,10 @@ class Video < ApplicationRecord
 
   validates :title, presence: true
   validates :category, presence: true
-  validates :video, presence: true
+  validates_presence_of :video, message: 'Video upload is mandatory.'
   validate :video_type
   validate :video_size
-  # validate :thumbnail_type
+  validate :thumbnail_type
 
   enum category: { exercise: 0, education: 1, recipe: 2 }
 
@@ -25,10 +25,9 @@ class Video < ApplicationRecord
     errors[:video] << 'should be less than 200MB.' if video.byte_size > 200.megabytes
   end
 
-  # def thumbnail_type
-  #   if thumbnail.attached?
-  #     thumbnail.content_type.in?(%w[image/png image/jpeg image/jpg])
-  #     errors.add(:thumbnail, ' must be in png, jpeg or jpg type.')
-  #   end
-  # end
+  def thumbnail_type
+    if thumbnail.attached? && !thumbnail.attachment.blob.content_type.in?(%w[image/png image/jpeg image/jpg])
+      errors.add(:thumbnail, 'must be an image file.')
+    end
+  end
 end
