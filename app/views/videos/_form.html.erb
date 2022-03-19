@@ -1,42 +1,36 @@
 <%= form_with(model: video, local: true) do |form| %>
-  <% if video.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(video.errors.count, "error") %> prohibited this video from being saved:</h2>
+    <% if video.errors.any? %>
+      <div class="alert alert-danger" role="alert">
+        <p>
+          <%= pluralize(video.errors.count, "error") %> prohibited this video from being saved:
+        </p>
+        <ul>
+          <% video.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-      <ul>
-        <% video.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
+  <div class="field mt-5">
     <%= form.label :title %>
     <%= form.text_field :title %>
   </div>
 
-  <div class="field">
+  <div class="field mt-3">
+    <%= form.label :video %>
+    <%= form.file_field :video %>
+  </div>
+
+  <div class="field mt-3">
+    <%= form.label :thumbnail %>
+    <%= form.file_field :thumbnail %>
+  </div>
+
+  <div class="field mt-3">
     <%= form.label :category %>
-    <%= form.number_field :category %>
+    <%= form.select :category, Video.categories.keys.to_a %>
   </div>
 
-  <div class="field">
-    <%= form.label :image_64 %>
-    <%= form.text_field :image_64 %>
-  </div>
-
-  <div class="field">
-    <%= form.label :image_128 %>
-    <%= form.text_field :image_128 %>
-  </div>
-
-  <div class="field">
-    <%= form.label :image_256 %>
-    <%= form.text_field :image_256 %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <%= form.submit class: 'btn btn-primary mt-3' %>
 <% end %>
