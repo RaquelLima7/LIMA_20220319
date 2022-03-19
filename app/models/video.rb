@@ -4,7 +4,7 @@ class Video < ApplicationRecord
 
   validates :title, presence: true
   validates :category, presence: true
-  validates_presence_of :video, message: 'Video upload is mandatory.'
+  validates_presence_of :video, message: 'upload is mandatory.'
   validate :video_type
   validate :video_size
   validate :thumbnail_type
@@ -14,20 +14,20 @@ class Video < ApplicationRecord
   private
 
   def video_type
-    if video.attached? && !video.content_type.in?(%w[video/mp4 video/mov])
-      errors.add(:video, ' must be in MP4 or MOV type.')
-    elsif video.attached?.eql?(false)
-      errors.add(:video, 'upload is mandatory.')
-    end
+    return unless video.attached? && !video.content_type.in?(%w[video/mp4 video/mov])
+
+    errors.add(:video, ' must be in MP4 or MOV type.')
   end
 
   def video_size
-    errors[:video] << 'should be less than 200MB.' if video.byte_size > 200.megabytes
+    return unless video.attached? && video.byte_size > 200.megabytes
+
+    errors.add(:video, 'should be less than 200MB.')
   end
 
   def thumbnail_type
-    if thumbnail.attached? && !thumbnail.attachment.blob.content_type.in?(%w[image/png image/jpeg image/jpg])
-      errors.add(:thumbnail, 'must be an image file.')
-    end
+    return unless thumbnail.attached? && !thumbnail.attachment.blob.content_type.in?(%w[image/png image/jpeg image/jpg])
+
+    errors.add(:thumbnail, 'must be an image file.')
   end
 end
