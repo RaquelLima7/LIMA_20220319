@@ -1,24 +1,28 @@
-# README
+<p align="center">LIMA_20220319</p>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<p align="center">
+  <a href="https://ruby-doc.org/core-2.7.3/">
+    <img alt="Ruby Version" src="https://img.shields.io/badge/Ruby-2.7.3 -green.svg" target="_blank">
+  </a>
+  <a href="https://guides.rubyonrails.org/6_1_release_notes.html">
+    <img alt="" src="https://img.shields.io/badge/Rails-~> 6.0.4-blue.svg" target="_blank">
+  </a>
+</p>
 
-Things you may want to cover:
+## Screenshot
+![]()
 
-* Ruby version
+## Stack the Project
 
-* System dependencies
+- **Ruby on Rails**
+- **Bootstrap**
+- **Postgresql**
 
-* Configuration
+<br>
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Project
+LIMA_20220319 is a Rails project that allows the user to add videos and thumbnails.
+Videos must be mp4 or mov and have a maximum of 200MB.
+When uploading a video, you must enter a category for it: exercise, education or recipe.
+The system generates three files (64x64, 128x128, 256x256) for each thumbnail.
+The project's home contains all the videos with the thumbnail, when you hover over the video, its name appears, and when you click the video starts.
