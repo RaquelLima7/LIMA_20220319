@@ -10,15 +10,13 @@
 </p>
 
 ## Screenshot
-![]()
+![](https://github.com/RaquelLima7/LIMA_20220319/blob/master/app/assets/images/LIMA_20220319%20.gif)
 
 ## Stack the Project
 
 - **Ruby on Rails**
 - **Bootstrap**
 - **Postgresql**
-
-<br>
 
 ## Project
 LIMA_20220319 is a Rails project that allows the user to add videos and thumbnails.
