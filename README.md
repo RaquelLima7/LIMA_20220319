@@ -1,4 +1,4 @@
-<p align="center">LIMA_20220319</p>
+<p align="center">Video upload 🎥🎞</p>
 
 <p align="center">
   <a href="https://ruby-doc.org/core-2.7.3/">
@@ -19,7 +19,7 @@
 - **Postgresql**
 
 ## Project
-LIMA_20220319 is a Rails project that allows the user to add videos and thumbnails.
+Project in Rails that allows the user to add videos and thumbnails.
 Videos must be mp4 or mov and have a maximum of 200MB.
 When uploading a video, you must enter a category for it: exercise, education or recipe.
 The system generates three files (64x64, 128x128, 256x256) for each thumbnail.
