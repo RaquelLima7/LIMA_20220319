@@ -17,9 +17,13 @@
 default: &default
   adapter: postgresql
   encoding: unicode
+  host: db
+  username: postgres
+  password: password
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  pool: 5
+    #<%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
@@ -78,8 +82,8 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  database: LIMA_20220319_production
-  username: LIMA_20220319
-  password: <%= ENV['LIMA_20220319_DATABASE_PASSWORD'] %>
+# production:
+#   <<: *default
+#   database: LIMA_20220319_production
+#   username: LIMA_20220319
+#   password: <%= ENV['LIMA_20220319_DATABASE_PASSWORD'] %>
