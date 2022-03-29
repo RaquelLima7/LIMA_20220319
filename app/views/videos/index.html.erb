@@ -15,8 +15,8 @@
               preload="auto"
               width="256"
               height="256"
-              poster="<%= url_for(video.thumbnail) if video.thumbnail.attached? %>"
-              data-setup="<%= url_for(video.video.preview(resize: "256x256")) if !video.thumbnail.attached?%>"
+              poster="<%= video.thumbnail.attached? ? url_for(video.thumbnail) : url_for(video.video.preview(resize: "256x256")) %>"
+              data-setup=""
             >
               <source src="<%= url_for(video.video) %>" type="video/mp4" />
               <source src="<%= url_for(video.video) %>" type="video/mov" />
