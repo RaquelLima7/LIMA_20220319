@@ -1,4 +1,4 @@
-<p align="center">Video upload 🎥🎞</p>
+<h1 align="center">Video upload 🎥🎞</h1>
 
 <p align="center">
   <a href="https://ruby-doc.org/core-2.7.3/">
