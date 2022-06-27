@@ -9,9 +9,18 @@
   </a>
 </p>
 
+## Project
+Project in Rails that allows the user to add videos and thumbnails.
+Videos must be mp4 or mov and have a maximum of 200MB.
+When uploading a video, you must enter a category for it: exercise, education or recipe.
+The system generates three files (64x64, 128x128, 256x256) for each thumbnail.
+The project's home contains all the videos with the thumbnail, when you hover over the video, its name appears, and when you click the video starts. When no thumbnail is added, the system generates a preview of the video.
 
 ## Screenshot
 ![](https://github.com/RaquelLima7/LIMA_20220319/blob/master/app/assets/images/LIMA_20220319%20.gif)
+
+### When no thumbnail is added, the system generates a preview of the video.
+![](https://github.com/RaquelLima7/video-upload/blob/master/app/assets/images/video.gif)
 
 ## Stack the Project
 
@@ -19,13 +28,6 @@
 - **Bootstrap**
 - **Postgresql**
 - **Docker**
-
-## Project
-Project in Rails that allows the user to add videos and thumbnails.
-Videos must be mp4 or mov and have a maximum of 200MB.
-When uploading a video, you must enter a category for it: exercise, education or recipe.
-The system generates three files (64x64, 128x128, 256x256) for each thumbnail.
-The project's home contains all the videos with the thumbnail, when you hover over the video, its name appears, and when you click the video starts.
 
 ## Building application
 
